@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Get the current path
+        const path = window.location.pathname;
+        
+        // Define redirects
+        const redirects = {
+            '/terms': '/terms.html',
+            '/privacy': '/privacy.html'
+        };
+        
+        // Check if we have a redirect for this path
+        if (redirects[path]) {
+            window.location.href = redirects[path];
+        } else {
+            // If no redirect found, go to home page
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html> 

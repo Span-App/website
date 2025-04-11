@@ -1,0 +1,310 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Effect */
+.blur-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Animated background orbs */
+.blur-background::before,
+.blur-background::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    opacity: 0.4;
+    filter: blur(80px);
+    animation: floatOrb 15s infinite alternate ease-in-out;
+}
+
+.blur-background::before {
+    background: radial-gradient(circle, rgba(120, 0, 255, 0.7) 0%, rgba(120, 0, 255, 0) 70%);
+    top: -150px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.blur-background::after {
+    background: radial-gradient(circle, rgba(0, 180, 255, 0.7) 0%, rgba(0, 180, 255, 0) 70%);
+    bottom: -100px;
+    left: -150px;
+    animation-delay: -7s;
+}
+
+/* Additional orbs */
+.orb-1, .orb-2 {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.35;
+    filter: blur(70px);
+    animation: floatOrb 18s infinite alternate-reverse ease-in-out;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 0, 128, 0.7) 0%, rgba(255, 0, 128, 0) 70%);
+    top: 5%;
+    left: -100px;
+    animation-delay: -3s;
+}
+
+.orb-2 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(0, 255, 200, 0.7) 0%, rgba(0, 255, 200, 0) 70%);
+    bottom: 5%;
+    right: -120px;
+    animation-delay: -10s;
+}
+
+/* Orb animation */
+@keyframes floatOrb {
+    0% {
+        transform: translate(0, 0);
+    }
+    33% {
+        transform: translate(40px, -40px);
+    }
+    66% {
+        transform: translate(-30px, 30px);
+    }
+    100% {
+        transform: translate(15px, 15px);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    width: 90%;
+    max-width: 600px;
+    padding: 60px 30px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Typography */
+h1 {
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff, #aaa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    position: relative;
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 3.8rem;
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tagline span {
+    position: relative;
+    display: inline-block;
+}
+
+.tagline span:first-child {
+    font-weight: 600;
+}
+
+.tagline span:last-child {
+    opacity: 0.85;
+}
+
+/* Call to Action */
+.cta {
+    margin-bottom: 3.5rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.button i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Social Links */
+.social-links .links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 3rem;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon i {
+    position: relative;
+    top: 1px; /* Slight adjustment to center icons better */
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .container {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .button {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+} 

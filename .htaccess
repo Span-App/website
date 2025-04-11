@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Handle /terms and /privacy routes
+RewriteRule ^terms/?$ terms.html [L]
+RewriteRule ^privacy/?$ privacy.html [L]
+
+# Handle 404 errors
+ErrorDocument 404 /index.html 
