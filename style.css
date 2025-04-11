@@ -1,3 +1,9 @@
+/* Add rules to disable animations when navigating between pages */
+.no-animation * {
+    animation: none !important;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s !important;
+}
+
 /* Reset and General Styles */
 * {
     margin: 0;
@@ -33,23 +39,23 @@ body {
 .blur-background::after {
     content: '';
     position: absolute;
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
     border-radius: 50%;
-    opacity: 0.4;
-    filter: blur(80px);
-    animation: floatOrb 15s infinite alternate ease-in-out;
+    opacity: 0.35;
+    filter: blur(100px);
+    animation: floatOrb 20s infinite alternate ease-in-out;
 }
 
 .blur-background::before {
-    background: radial-gradient(circle, rgba(120, 0, 255, 0.7) 0%, rgba(120, 0, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(100, 0, 255, 0.7) 0%, rgba(120, 0, 255, 0) 70%);
     top: -150px;
     right: -100px;
     animation-delay: 0s;
 }
 
 .blur-background::after {
-    background: radial-gradient(circle, rgba(0, 180, 255, 0.7) 0%, rgba(0, 180, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(0, 200, 255, 0.7) 0%, rgba(0, 180, 255, 0) 70%);
     bottom: -100px;
     left: -150px;
     animation-delay: -7s;
@@ -59,24 +65,24 @@ body {
 .orb-1, .orb-2 {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.35;
-    filter: blur(70px);
-    animation: floatOrb 18s infinite alternate-reverse ease-in-out;
+    opacity: 0.3;
+    filter: blur(90px);
+    animation: floatOrb 24s infinite alternate-reverse ease-in-out;
 }
 
 .orb-1 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 0, 128, 0.7) 0%, rgba(255, 0, 128, 0) 70%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.7) 0%, rgba(255, 0, 128, 0) 70%);
     top: 5%;
     left: -100px;
     animation-delay: -3s;
 }
 
 .orb-2 {
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(0, 255, 200, 0.7) 0%, rgba(0, 255, 200, 0) 70%);
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(0, 255, 180, 0.7) 0%, rgba(0, 255, 200, 0) 70%);
     bottom: 5%;
     right: -120px;
     animation-delay: -10s;
@@ -88,13 +94,13 @@ body {
         transform: translate(0, 0);
     }
     33% {
-        transform: translate(40px, -40px);
+        transform: translate(50px, -50px);
     }
     66% {
-        transform: translate(-30px, 30px);
+        transform: translate(-40px, 40px);
     }
     100% {
-        transform: translate(15px, 15px);
+        transform: translate(20px, 20px);
     }
 }
 
@@ -103,59 +109,61 @@ body {
     z-index: 1;
     max-width: 100%;
     width: 90%;
-    max-width: 600px;
-    padding: 60px 30px;
+    max-width: 650px;
+    padding: 70px 30px;
     text-align: center;
     animation: fadeIn 1.2s ease-out;
 }
 
 /* Typography */
 h1 {
-    font-size: 6rem;
+    font-size: 7rem;
     font-weight: 800;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #fff, #aaa);
+    background: linear-gradient(135deg, #fff 20%, #aaa 80%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
+    text-shadow: 0 5px 30px rgba(255, 255, 255, 0.1);
 }
 
 .subtitle {
     position: relative;
     display: inline-block;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 300;
-    margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
     letter-spacing: 2px;
     text-transform: lowercase;
     font-style: italic;
-    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .subtitle::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
+    width: 60px;
     height: 1px;
     background: rgba(255, 255, 255, 0.3);
 }
 
 .tagline {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.75);
-    margin-bottom: 3.8rem;
-    letter-spacing: 0.2px;
-    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 4rem;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.5s both;
 }
 
 .tagline span {
@@ -165,146 +173,198 @@ h1 {
 
 .tagline span:first-child {
     font-weight: 600;
+    background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .tagline span:last-child {
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 /* Call to Action */
 .cta {
-    margin-bottom: 3.5rem;
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out 0.7s both;
 }
 
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 32px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 18px 36px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    font-size: 1.15rem;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .button:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 0 20px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
 }
 
 .button i {
-    margin-right: 10px;
-    font-size: 1.2rem;
+    margin-right: 12px;
+    font-size: 1.25rem;
 }
 
 /* Social Links */
 .social-links .links {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-bottom: 3rem;
+    gap: 30px;
+    margin-bottom: 3.5rem;
+    animation: fadeInUp 1s ease-out 0.9s both;
 }
 
 .social-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.3rem;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.35rem;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(8px);
     text-decoration: none;
 }
 
 .social-icon:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.18);
     color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .social-icon i {
     position: relative;
-    top: 1px; /* Slight adjustment to center icons better */
+    top: 1px;
 }
 
 /* Footer */
 footer {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    animation: fadeInUp 1s ease-out 1.1s both;
 }
 
 footer a {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 4.5rem;
+        font-size: 5rem;
     }
     
     .subtitle {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     
     .tagline {
-        font-size: 1.3rem;
-        margin-bottom: 2.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 3rem;
     }
     
     .container {
-        padding: 40px 20px;
+        padding: 50px 25px;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 3.5rem;
+        font-size: 3.8rem;
     }
     
     .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     
     .tagline {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
     }
     
     .button {
-        padding: 14px 28px;
-        font-size: 1rem;
+        padding: 16px 30px;
+        font-size: 1.05rem;
     }
     
     .social-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
     }
 } 
