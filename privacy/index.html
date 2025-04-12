@@ -3,46 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Span</title>
+    <title>Privacy Policy - Span AI</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .legal-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px 20px 60px;
         }
         
         .legal-content {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--card-background);
+            border: 1px solid var(--glass-border);
             backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 40px;
+            border-radius: 16px;
+            padding: 50px;
             margin: 30px 0;
             text-align: left;
-            color: #fff;
+            color: var(--text-light);
+            box-shadow: var(--shadow-soft);
+            overflow-y: auto;
         }
         
         .legal-content h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             text-align: center;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
         }
         
         .legal-content h2 {
             font-size: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
-            color: #fff;
+            color: var(--text-light);
+            font-weight: 700;
         }
         
         .legal-content p {
             margin-bottom: 1rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            color: var(--text-muted);
         }
         
         .legal-content ul {
@@ -52,128 +61,158 @@
         
         .legal-content li {
             margin-bottom: 0.5rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            color: var(--text-muted);
         }
         
         .back-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             margin-bottom: 20px;
-            color: #fff;
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 600;
-            transition: opacity 0.2s;
+            transition: all var(--transition-fast);
+            padding: 8px 16px;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .back-link:hover {
-            opacity: 0.8;
+            transform: translateX(-5px);
+            background-color: rgba(255, 85, 0, 0.1);
+            border-color: rgba(255, 85, 0, 0.2);
+        }
+        
+        .back-link i {
+            margin-right: 8px;
         }
         
         .last-updated {
             text-align: center;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         @media (max-width: 768px) {
             .legal-content {
-                padding: 20px;
+                padding: 30px;
             }
             
             .legal-content h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .legal-content h2 {
                 font-size: 1.3rem;
             }
         }
+        
+        @media (max-width: 480px) {
+            .legal-content {
+                padding: 25px;
+            }
+            
+            .legal-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .legal-content h2 {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
-<body>
-    <div class="blur-background">
-        <div class="orb-1"></div>
-        <div class="orb-2"></div>
+<body class="legal-page">
+    <div class="background-gradient">
+        <div class="noise-overlay"></div>
     </div>
     
-    <div class="container">
-        <header>
-            <h1>SPAN</h1>
-        </header>
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../index.html">
+                <div class="text-logo">
+                    <span>SPAN</span>
+                </div>
+            </a>
+        </div>
+    </header>
 
-        <main class="legal-container">
-            <a href="../index.html" class="back-link">← Back to Home</a>
+    <main class="legal-container">
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+        
+        <div class="legal-content">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: July 1, 2024</p>
             
-            <div class="legal-content">
-                <h1>Privacy Policy</h1>
-                <p class="last-updated">Last Updated: July 1, 2024</p>
-                
-                <h2>1. Introduction</h2>
-                <p>At Span, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our application and services.</p>
-                
-                <h2>2. Information We Collect</h2>
-                <p><strong>Personal Information:</strong> We may collect personal information such as your name, email address, and account credentials when you register for an account.</p>
-                <p><strong>Usage Data:</strong> We collect information about how you interact with our services, including the AI models you use, queries you submit, and features you access.</p>
-                <p><strong>Device Information:</strong> We collect information about the device you use to access our services, including device type, operating system, and browser type.</p>
-                
-                <h2>3. How We Use Your Information</h2>
-                <p>We use the information we collect to:</p>
-                <ul>
-                    <li>Provide and maintain our services</li>
-                    <li>Improve and personalize your experience</li>
-                    <li>Communicate with you about updates and new features</li>
-                    <li>Ensure the security and integrity of our services</li>
-                    <li>Analyze usage patterns to enhance our services</li>
-                </ul>
-                
-                <h2>4. Information Sharing</h2>
-                <p>We may share your information with:</p>
-                <p><strong>Service Providers:</strong> Third-party vendors who perform services on our behalf and require access to your information to provide these services.</p>
-                <p><strong>AI Model Providers:</strong> To process your requests through their services.</p>
-                <p><strong>Legal Requirements:</strong> When required by law, such as to comply with a subpoena or legal process.</p>
-                
-                <h2>5. Data Security</h2>
-                <p>We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
-                
-                <h2>6. Your Data Rights</h2>
-                <p>Depending on your location, you may have the right to:</p>
-                <ul>
-                    <li>Access the personal information we hold about you</li>
-                    <li>Correct inaccurate personal information</li>
-                    <li>Delete your personal information</li>
-                    <li>Object to or restrict the processing of your personal information</li>
-                    <li>Receive your personal information in a structured, commonly used format</li>
-                </ul>
-                
-                <h2>7. Children's Privacy</h2>
-                <p>Our services are not intended for individuals under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete that information.</p>
-                
-                <h2>8. Changes to This Privacy Policy</h2>
-                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
-                
-                <h2>9. Third-Party Links</h2>
-                <p>Our services may contain links to third-party websites or services that are not owned or controlled by Span. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites or services.</p>
-                
-                <h2>10. Cookies and Tracking Technologies</h2>
-                <p>We use cookies and similar tracking technologies to track activity on our services and to hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
-                
-                <h2>11. International Data Transfers</h2>
-                <p>Your information may be transferred to and processed in countries other than the country in which you reside. These countries may have data protection laws that are different from the laws of your country.</p>
-                
-                <h2>12. Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy, please contact us at privacy@span.app.</p>
-            </div>
-        </main>
+            <h2>1. Introduction</h2>
+            <p>At Span AI, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our application and services.</p>
+            
+            <h2>2. Information We Collect</h2>
+            <p><strong>Personal Information:</strong> We may collect personal information such as your name, email address, and account credentials when you register for an account.</p>
+            <p><strong>Usage Data:</strong> We collect information about how you interact with our services, including the AI models you use, queries you submit, and features you access.</p>
+            <p><strong>Device Information:</strong> We collect information about the device you use to access our services, including device type, operating system, and browser type.</p>
+            
+            <h2>3. How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide and maintain our services</li>
+                <li>Improve and personalize your experience</li>
+                <li>Communicate with you about updates and new features</li>
+                <li>Ensure the security and integrity of our services</li>
+                <li>Analyze usage patterns to enhance our services</li>
+            </ul>
+            
+            <h2>4. Information Sharing</h2>
+            <p>We may share your information with:</p>
+            <p><strong>Service Providers:</strong> Third-party vendors who perform services on our behalf and require access to your information to provide these services.</p>
+            <p><strong>AI Model Providers:</strong> To process your requests through their services.</p>
+            <p><strong>Legal Requirements:</strong> When required by law, such as to comply with a subpoena or legal process.</p>
+            
+            <h2>5. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+            
+            <h2>6. Your Data Rights</h2>
+            <p>Depending on your location, you may have the right to:</p>
+            <ul>
+                <li>Access the personal information we hold about you</li>
+                <li>Correct inaccurate personal information</li>
+                <li>Delete your personal information</li>
+                <li>Object to or restrict the processing of your personal information</li>
+                <li>Receive your personal information in a structured, commonly used format</li>
+            </ul>
+            
+            <h2>7. Children's Privacy</h2>
+            <p>Our services are not intended for individuals under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete that information.</p>
+            
+            <h2>8. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+            
+            <h2>9. Third-Party Links</h2>
+            <p>Our services may contain links to third-party websites or services that are not owned or controlled by Span AI. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites or services.</p>
+            
+            <h2>10. Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar tracking technologies to track activity on our services and to hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+            
+            <h2>11. International Data Transfers</h2>
+            <p>Your information may be transferred to and processed in countries other than the country in which you reside. These countries may have data protection laws that are different from the laws of your country.</p>
+            
+            <h2>12. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at privacy@span.app.</p>
+        </div>
+    </main>
 
-        <footer>
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="../terms/index.html">Terms of Service</a>
+            <a href="../privacy/index.html">Privacy Policy</a>
             <a href="https://100ideaz.com" target="_blank" rel="noopener noreferrer">© 100 Ideaz, LLC. 2024</a>
-            <div class="footer-links">
-                <a href="../terms/index.html">Terms</a>
-                <a href="../privacy/index.html">Privacy</a>
-            </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <script src="../script.js"></script>
     <script>

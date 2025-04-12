@@ -3,46 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Span</title>
+    <title>Terms of Service - Span AI</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .legal-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px 20px 60px;
         }
         
         .legal-content {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--card-background);
+            border: 1px solid var(--glass-border);
             backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 40px;
+            border-radius: 16px;
+            padding: 50px;
             margin: 30px 0;
             text-align: left;
-            color: #fff;
+            color: var(--text-light);
+            box-shadow: var(--shadow-soft);
+            overflow-y: auto;
         }
         
         .legal-content h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             text-align: center;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
         }
         
         .legal-content h2 {
             font-size: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
-            color: #fff;
+            color: var(--text-light);
+            font-weight: 700;
         }
         
         .legal-content p {
             margin-bottom: 1rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            color: var(--text-muted);
         }
         
         .legal-content ul {
@@ -52,119 +61,149 @@
         
         .legal-content li {
             margin-bottom: 0.5rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            color: var(--text-muted);
         }
         
         .back-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             margin-bottom: 20px;
-            color: #fff;
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 600;
-            transition: opacity 0.2s;
+            transition: all var(--transition-fast);
+            padding: 8px 16px;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .back-link:hover {
-            opacity: 0.8;
+            transform: translateX(-5px);
+            background-color: rgba(255, 85, 0, 0.1);
+            border-color: rgba(255, 85, 0, 0.2);
+        }
+        
+        .back-link i {
+            margin-right: 8px;
         }
         
         .last-updated {
             text-align: center;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         @media (max-width: 768px) {
             .legal-content {
-                padding: 20px;
+                padding: 30px;
             }
             
             .legal-content h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .legal-content h2 {
                 font-size: 1.3rem;
             }
         }
+        
+        @media (max-width: 480px) {
+            .legal-content {
+                padding: 25px;
+            }
+            
+            .legal-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .legal-content h2 {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
-<body>
-    <div class="blur-background">
-        <div class="orb-1"></div>
-        <div class="orb-2"></div>
+<body class="legal-page">
+    <div class="background-gradient">
+        <div class="noise-overlay"></div>
     </div>
     
-    <div class="container">
-        <header>
-            <h1>SPAN</h1>
-        </header>
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../index.html">
+                <div class="text-logo">
+                    <span>SPAN</span>
+                </div>
+            </a>
+        </div>
+    </header>
 
-        <main class="legal-container">
-            <a href="../index.html" class="back-link">← Back to Home</a>
+    <main class="legal-container">
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+        
+        <div class="legal-content">
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last Updated: July 1, 2024</p>
             
-            <div class="legal-content">
-                <h1>Terms of Service</h1>
-                <p class="last-updated">Last Updated: July 1, 2024</p>
-                
-                <h2>1. Introduction</h2>
-                <p>Welcome to Span ("we," "our," or "us"). By accessing or using our application and services, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our services.</p>
-                
-                <h2>2. Use of Services</h2>
-                <p>Span provides access to various AI models through a unified interface. You agree to use these services only for lawful purposes and in accordance with these Terms. You are responsible for all activities that occur under your account.</p>
-                
-                <h2>3. Account Registration</h2>
-                <p>To access certain features, you may need to register for an account. You agree to provide accurate and complete information and to update such information to keep it accurate and current. You are responsible for maintaining the confidentiality of your account credentials.</p>
-                
-                <h2>4. User Content</h2>
-                <p>Any content you submit to our services remains your property. However, by submitting content, you grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, and display such content to provide and improve our services.</p>
-                
-                <h2>5. Intellectual Property</h2>
-                <p>All content, features, and functionality of our services, including but not limited to text, graphics, logos, and software, are owned by Span or its licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
-                
-                <h2>6. Prohibited Conduct</h2>
-                <p>You agree not to use our services to:</p>
-                <ul>
-                    <li>Violate any applicable laws or regulations</li>
-                    <li>Infringe upon the rights of others</li>
-                    <li>Generate content that is harmful, abusive, or inappropriate</li>
-                    <li>Attempt to access unauthorized areas of our systems</li>
-                    <li>Interfere with the proper functioning of our services</li>
-                </ul>
-                
-                <h2>7. Third-Party Services</h2>
-                <p>Our services may integrate with or provide access to third-party services. We are not responsible for the content, policies, or practices of such third parties.</p>
-                
-                <h2>8. Disclaimer of Warranties</h2>
-                <p>Our services are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that our services will be uninterrupted, secure, or error-free.</p>
-                
-                <h2>9. Limitation of Liability</h2>
-                <p>To the fullest extent permitted by law, Span shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.</p>
-                
-                <h2>10. Modifications to Terms</h2>
-                <p>We reserve the right to modify these Terms at any time. We will provide notice of significant changes through our services or by other means. Your continued use of our services after such changes constitutes your acceptance of the modified Terms.</p>
-                
-                <h2>11. Termination</h2>
-                <p>We may terminate or suspend your access to our services at any time, without prior notice, for any reason, including if you violate these Terms.</p>
-                
-                <h2>12. Governing Law</h2>
-                <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.</p>
-                
-                <h2>13. Contact Information</h2>
-                <p>If you have any questions about these Terms, please contact us at contact@span.app.</p>
-            </div>
-        </main>
+            <h2>1. Introduction</h2>
+            <p>Welcome to Span AI ("we," "our," or "us"). By accessing or using our application and services, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our services.</p>
+            
+            <h2>2. Use of Services</h2>
+            <p>Span AI provides access to various AI models through a unified interface. You agree to use these services only for lawful purposes and in accordance with these Terms. You are responsible for all activities that occur under your account.</p>
+            
+            <h2>3. Account Registration</h2>
+            <p>To access certain features, you may need to register for an account. You agree to provide accurate and complete information and to update such information to keep it accurate and current. You are responsible for maintaining the confidentiality of your account credentials.</p>
+            
+            <h2>4. User Content</h2>
+            <p>Any content you submit to our services remains your property. However, by submitting content, you grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, and display such content to provide and improve our services.</p>
+            
+            <h2>5. Intellectual Property</h2>
+            <p>All content, features, and functionality of our services, including but not limited to text, graphics, logos, and software, are owned by Span AI or its licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
+            
+            <h2>6. Prohibited Conduct</h2>
+            <p>You agree not to use our services to:</p>
+            <ul>
+                <li>Violate any applicable laws or regulations</li>
+                <li>Infringe upon the rights of others</li>
+                <li>Generate content that is harmful, abusive, or inappropriate</li>
+                <li>Attempt to access unauthorized areas of our systems</li>
+                <li>Interfere with the proper functioning of our services</li>
+            </ul>
+            
+            <h2>7. Third-Party Services</h2>
+            <p>Our services may integrate with or provide access to third-party services. We are not responsible for the content, policies, or practices of such third parties.</p>
+            
+            <h2>8. Disclaimer of Warranties</h2>
+            <p>Our services are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that our services will be uninterrupted, secure, or error-free.</p>
+            
+            <h2>9. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, Span AI shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.</p>
+            
+            <h2>10. Modifications to Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. We will provide notice of significant changes through our services or by other means. Your continued use of our services after such changes constitutes your acceptance of the modified Terms.</p>
+            
+            <h2>11. Termination</h2>
+            <p>We may terminate or suspend your access to our services at any time, without prior notice, for any reason, including if you violate these Terms.</p>
+            
+            <h2>12. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.</p>
+            
+            <h2>13. Contact Information</h2>
+            <p>If you have any questions about these Terms, please contact us at contact@span.app.</p>
+        </div>
+    </main>
 
-        <footer>
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="../terms/index.html">Terms of Service</a>
+            <a href="../privacy/index.html">Privacy Policy</a>
             <a href="https://100ideaz.com" target="_blank" rel="noopener noreferrer">© 100 Ideaz, LLC. 2024</a>
-            <div class="footer-links">
-                <a href="../terms/index.html">Terms</a>
-                <a href="../privacy/index.html">Privacy</a>
-            </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <script src="../script.js"></script>
     <script>
