@@ -4,6 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Span AI - All AI models. One app.</title>
+    <!-- Inline critical CSS -->
+    <style>
+        :root {
+            --primary: #FF5500;
+            --primary-light: #FF8800;
+            --primary-dark: #E04800;
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.65);
+            --background-dark: #0F0F14;
+            --background-gradient-1: #171714;
+            --background-gradient-2: #0C0C0C;
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-strong: 0 15px 35px rgba(0, 0, 0, 0.2);
+            --transition-fast: 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+            --transition-medium: 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(30, 25, 22, 0.4);
+            --card-background: rgba(25, 25, 30, 0.4);
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+        
+        .background-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 15% 50%, var(--background-gradient-1) 0%, var(--background-gradient-2) 100%);
+        }
+    </style>
+    <!-- Load external CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,5 +105,187 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Check if CSS is loading correctly
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create a test element to check if CSS is applied
+            const testElement = document.createElement('div');
+            testElement.style.display = 'none';
+            testElement.className = 'text-logo';
+            document.body.appendChild(testElement);
+            
+            // Get computed style
+            const computedStyle = window.getComputedStyle(testElement);
+            
+            // Check if the font-weight is applied (a property from our CSS)
+            if (computedStyle.fontWeight !== '800') {
+                console.error('CSS not loading correctly, applying fallback styles');
+                document.body.classList.add('css-fallback');
+                
+                // Apply critical styles inline
+                const style = document.createElement('style');
+                style.textContent = `
+                    .landing-container {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
+                        width: 100%;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 0 2rem;
+                    }
+                    
+                    .site-header {
+                        padding: 2.5rem 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    .text-logo {
+                        font-size: 2.5rem;
+                        font-weight: 800;
+                        letter-spacing: -0.03em;
+                    }
+                    
+                    .text-logo span {
+                        background: linear-gradient(135deg, var(--primary), var(--primary-light));
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        filter: drop-shadow(0 5px 20px rgba(255, 85, 0, 0.3));
+                    }
+                    
+                    .hero-content {
+                        text-align: center;
+                        position: relative;
+                        flex: 1 0 auto;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        max-width: 800px;
+                        margin: 0 auto;
+                        padding: 2rem 0;
+                    }
+                    
+                    .tagline {
+                        font-size: 3.25rem;
+                        font-weight: 700;
+                        margin-bottom: 1.5rem;
+                        background: linear-gradient(90deg, var(--text-light), rgba(255, 255, 255, 0.8));
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        letter-spacing: -0.03em;
+                        line-height: 1.2;
+                    }
+                    
+                    .tagline span {
+                        display: inline-block;
+                        background: linear-gradient(90deg, var(--primary-light), var(--primary));
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                    
+                    .description {
+                        font-size: 1.15rem;
+                        color: var(--text-muted);
+                        max-width: 650px;
+                        margin: 0 auto 2rem;
+                        line-height: 1.6;
+                        font-weight: 400;
+                        letter-spacing: -0.01em;
+                    }
+                    
+                    .cta-button {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0.875rem 2.25rem;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        border-radius: 0.5rem;
+                        text-decoration: none;
+                        transition: all 0.25s;
+                        position: relative;
+                        overflow: hidden;
+                        letter-spacing: 0;
+                    }
+                    
+                    .cta-button.primary {
+                        background: var(--primary);
+                        color: var(--text-light);
+                        box-shadow: 0 4px 16px rgba(255, 85, 0, 0.25);
+                    }
+                    
+                    .site-footer {
+                        padding: 2rem 0;
+                        position: relative;
+                        flex: 0 0 auto;
+                        text-align: center;
+                    }
+                    
+                    .social-links {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1.25rem;
+                        margin-bottom: 1.5rem;
+                    }
+                    
+                    .social-icon {
+                        width: 38px;
+                        height: 38px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: var(--text-muted);
+                        background-color: var(--card-bg);
+                        border: 1px solid var(--glass-border);
+                        transition: all 0.25s;
+                        text-decoration: none;
+                    }
+                    
+                    .footer-links {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1.5rem;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .footer-links a {
+                        color: var(--text-muted);
+                        text-decoration: none;
+                        font-size: 0.875rem;
+                        transition: color 0.15s;
+                    }
+                    
+                    .badge {
+                        display: inline-flex;
+                        margin-bottom: 1.5rem;
+                        padding: 0.4rem 1.2rem;
+                        background-color: rgba(255, 85, 0, 0.1);
+                        border: 1px solid rgba(255, 85, 0, 0.2);
+                        border-radius: 2rem;
+                    }
+                    
+                    .badge span {
+                        font-size: 0.85rem;
+                        font-weight: 600;
+                        color: var(--primary-light);
+                        letter-spacing: 0.01em;
+                        white-space: nowrap;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Remove test element
+            document.body.removeChild(testElement);
+        });
+    </script>
 </body>
 </html> 
